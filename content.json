@@ -84,6 +84,20 @@
       "url": "https://zzwu06.github.io/notebooks/"
     }
   ],
+  "readingSeries": [
+    {
+      "slug": "neuronal-dynamics",
+      "title": "Neuronal Dynamics",
+      "subtitle": "From single neurons to networks and models of cognition",
+      "authors": "Wulfram Gerstner, Werner M. Kistler, Richard Naud, and Liam Paninski",
+      "bookUrl": "https://neuronaldynamics.epfl.ch/online/",
+      "firstReading": {
+        "title": "Introduction",
+        "url": "https://neuronaldynamics.epfl.ch/online/Ch1.html",
+        "question": "How does a neuron turn a stream of inputs into a sequence of spikes?"
+      }
+    }
+  ],
   "contact": {
     "email": "wuzz23@mails.tsinghua.edu.cn",
     "personalEmail": "wuzezhao848@gmail.com"

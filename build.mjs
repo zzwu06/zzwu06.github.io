@@ -18,6 +18,11 @@ const notebookCatalog = c.notebooks.map(({ title, url }) =>
   `<li><a href="${e(url)}">${e(title)}</a></li>`
 ).join('\n');
 
+const seriesCatalog = c.readingSeries.map(({ slug, title, subtitle }) => {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('Invalid reading series slug');
+  return '<li><a href="' + e(slug) + '/">' + e(title) + '</a><p class="notebook-subtitle">' + e(subtitle) + '</p></li>';
+}).join('\n');
+
 await writeFile('dist/notebook/index.html', `${head('Notebook — ' + c.name, '../style.css')}
 <body>
   <a class="skip" href="#book">Skip to content</a>
@@ -28,10 +33,45 @@ await writeFile('dist/notebook/index.html', `${head('Notebook — ' + c.name, '.
         <h1>Notebook</h1>
         <p class="lead">Start with a question. Build intuition. Explore the mathematics.</p>
       </div>
-      <ul class="notebook-list">${notebookCatalog}</ul>
+      <section class="notebook-group" aria-labelledby="standalone-title">
+        <h2 id="standalone-title">Standalone Notebooks</h2>
+        <ul class="notebook-list">${notebookCatalog}</ul>
+      </section>
+      <section class="notebook-group" aria-labelledby="series-title">
+        <h2 id="series-title">Reading Series</h2>
+        <ul class="notebook-list">${seriesCatalog}</ul>
+      </section>
     </main>
   </div>
 </body></html>`);
+for (const { slug, title, subtitle, authors, bookUrl, firstReading } of c.readingSeries) {
+  const directory = 'dist/notebook/' + slug;
+  await mkdir(directory, {recursive: true});
+  await writeFile(directory + '/index.html', `${head(title + ' — ' + c.name, '../../style.css')}
+<body>
+  <a class="skip" href="#book">Skip to content</a>
+  <div class="page">
+    <nav class="book-header" aria-label="Series navigation"><a href="../../">Homepage</a><a href="../">Notebook</a></nav>
+    <main class="book-main" id="book">
+      <div class="book-intro">
+        <h1>${e(title)}</h1>
+        <p class="lead">${e(subtitle)}</p>
+      </div>
+      <div class="series-source">
+        <p>I am reading this textbook one question at a time, working through the models with derivations and interactive examples.</p>
+        <p>Textbook by ${e(authors)}. <a href="${e(bookUrl)}">Read the online book</a>.</p>
+      </div>
+      <section class="notebook-group" aria-labelledby="first-reading-title">
+        <h2 id="first-reading-title">First reading</h2>
+        <h3>${e(firstReading.title)}</h3>
+        <p>${e(firstReading.question)}</p>
+        <p><a href="${e(firstReading.url)}">Read Chapter 1 in the textbook</a></p>
+      </section>
+    </main>
+  </div>
+</body></html>`);
+}
+
 await copyFile('style.css','dist/style.css');
 if(existsSync('assets')) await cp('assets','dist/assets',{recursive:true});
-console.log('Built homepage and Notebook directory.');
+console.log('Built homepage, Notebook directory, and reading series.');

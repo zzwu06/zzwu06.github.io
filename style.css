@@ -9,3 +9,10 @@
 .contact-emails p{margin:0 0 6px}.contact-emails a{overflow-wrap:anywhere}
 
 .profile img.portrait{height:auto;aspect-ratio:935 / 924;object-fit:contain}
+
+.notebook-group { padding-top: 36px; }
+.notebook-group h2 { font: 600 22px/1.4 Arial, Helvetica, sans-serif; margin: 0 0 12px; }
+.notebook-group .notebook-list { margin: 0; }
+.notebook-subtitle { font: 16px/1.5 Arial, Helvetica, sans-serif; color: var(--muted); margin: 6px 0 0; }
+.series-source { margin-top: 24px; max-width: 720px; }
+.series-source p, .notebook-group > p { margin: 0 0 12px; }
