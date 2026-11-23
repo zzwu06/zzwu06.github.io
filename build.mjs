@@ -44,32 +44,30 @@ await writeFile('dist/notebook/index.html', `${head('Notebook — ' + c.name, '.
     </main>
   </div>
 </body></html>`);
-for (const { slug, title, subtitle, authors, bookUrl, firstReading } of c.readingSeries) {
+for (const { slug, title, chapters } of c.readingSeries) {
   const directory = 'dist/notebook/' + slug;
   await mkdir(directory, {recursive: true});
+  const chapterCatalog = chapters.map(({ slug, number, title }) => {
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('Invalid chapter slug');
+    return '<li><a href="' + e(slug) + '/">Chapter ' + e(number) + '</a><p class="notebook-subtitle">' + e(title) + '</p></li>';
+  }).join('\n');
   await writeFile(directory + '/index.html', `${head(title + ' — ' + c.name, '../../style.css')}
 <body>
   <a class="skip" href="#book">Skip to content</a>
   <div class="page">
     <nav class="book-header" aria-label="Series navigation"><a href="../../">Homepage</a><a href="../">Notebook</a></nav>
     <main class="book-main" id="book">
-      <div class="book-intro">
-        <h1>${e(title)}</h1>
-        <p class="lead">${e(subtitle)}</p>
-      </div>
-      <div class="series-source">
-        <p>I am reading this textbook one question at a time, working through the models with derivations and interactive examples.</p>
-        <p>Textbook by ${e(authors)}. <a href="${e(bookUrl)}">Read the online book</a>.</p>
-      </div>
-      <section class="notebook-group" aria-labelledby="first-reading-title">
-        <h2 id="first-reading-title">First reading</h2>
-        <h3>${e(firstReading.title)}</h3>
-        <p>${e(firstReading.question)}</p>
-        <p><a href="${e(firstReading.url)}">Read Chapter 1 in the textbook</a></p>
+      <div class="book-intro"><h1>${e(title)}</h1></div>
+      <section class="notebook-group" aria-labelledby="chapters-title">
+        <h2 id="chapters-title">Contents</h2>
+        <ul class="notebook-list">${chapterCatalog}</ul>
       </section>
     </main>
   </div>
 </body></html>`);
+  for (const chapter of chapters) {
+    await cp('notes/' + slug + '/' + chapter.slug, directory + '/' + chapter.slug, {recursive: true});
+  }
 }
 
 await copyFile('style.css','dist/style.css');

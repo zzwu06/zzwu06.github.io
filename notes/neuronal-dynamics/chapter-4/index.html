@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive reading note on nullclines, trajectories, and stability in a two-variable neuron model.">
+  <title>Chapter 4 — Neuronal Dynamics</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <link rel="stylesheet" href="phase-plane.css">
+  <script type="module" src="phase-plane.js"></script>
+</head>
+<body>
+  <a class="skip" href="#chapter">Skip to content</a>
+  <div class="page">
+    <nav class="book-header" aria-label="Chapter navigation"><a href="../">Neuronal Dynamics</a><a href="../../">Notebook</a></nav>
+    <main class="book-main chapter-note" id="chapter">
+      <header class="book-intro">
+        <p class="chapter-number">Chapter 4</p>
+        <h1>Dimensionality Reduction and Phase Plane Analysis</h1>
+      </header>
+
+      <section aria-labelledby="phase-plane-title">
+        <h2 id="phase-plane-title">Will the neuron return to rest?</h2>
+        <p>A two-variable model represents a neuron's state as one point. Its coordinates are voltage <var>u</var> and a recovery variable <var>w</var>. The arrows show how that point moves. On each nullcline, one coordinate stops changing instantaneously. Where the two lines cross, both stop changing, so the crossing is a fixed point.</p>
+        <p>Change <var>a</var> to rotate the voltage nullcline and watch how the trajectory changes. Click or tap the plot to start elsewhere. With the plot focused, use the arrow keys to move the starting point.</p>
+
+        <figure class="phase-demo">
+          <div class="phase-control">
+            <label for="voltage-feedback">Voltage coefficient <var>a</var></label>
+            <output id="feedback-value" for="voltage-feedback">0.00</output>
+            <input id="voltage-feedback" type="range" min="-1.20" max="1.40" value="0" step="0.05">
+          </div>
+          <div class="phase-presets" aria-label="Example settings">
+            <button type="button" data-feedback="0">Return to rest</button>
+            <button type="button" data-feedback="0.55">Growing oscillations</button>
+            <button type="button" data-feedback="1.20">Saddle</button>
+          </div>
+          <ul class="phase-legend" aria-label="Plot legend">
+            <li><span class="phase-key voltage-key" aria-hidden="true"></span>Voltage nullcline</li>
+            <li><span class="phase-key recovery-key" aria-hidden="true"></span>Recovery nullcline</li>
+            <li><span class="phase-key" aria-hidden="true"></span>Trajectory</li>
+          </ul>
+          <svg id="phase-plot" viewBox="0 0 620 440" role="img" tabindex="0" aria-label="Phase plane. Use the arrow keys to move the starting point.">
+            <defs><clipPath id="phase-bounds"><rect x="70" y="16" width="520" height="354"></rect></clipPath></defs>
+            <g id="phase-axes" aria-hidden="true"></g>
+            <g id="phase-data" aria-hidden="true" clip-path="url(#phase-bounds)"></g>
+          </svg>
+          <figcaption id="phase-result" role="status">Stable fixed point. Nearby trajectories return to rest.</figcaption>
+          <noscript><p>Enable JavaScript to explore the phase plane.</p></noscript>
+        </figure>
+
+        <details class="chapter-equations">
+          <summary>Model equations</summary>
+          <p>This example uses the linear system in the textbook's phase-plane section. The recovery equation holds <var>b</var> = 1 and <var>ε</var> = 0.30 fixed.</p>
+          <math display="block" aria-label="du over dt equals a u minus w"><mfrac><mrow><mi>d</mi><mi>u</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>a</mi><mi>u</mi><mo>−</mo><mi>w</mi></math>
+          <math display="block" aria-label="dw over dt equals epsilon times b u minus w"><mfrac><mrow><mi>d</mi><mi>w</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>ε</mi><mo>(</mo><mi>b</mi><mi>u</mi><mo>−</mo><mi>w</mi><mo>)</mo></math>
+          <p>Setting each derivative to zero gives <var>w</var> = <var>a</var><var>u</var> and <var>w</var> = <var>b</var><var>u</var>. The voltage equation describes motion along the horizontal axis. The recovery equation describes motion along the vertical axis.</p>
+        </details>
+
+        <p class="chapter-source"><a href="https://neuronaldynamics.epfl.ch/online/Ch4.S3.html">Textbook §4.3 · Phase plane analysis</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

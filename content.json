@@ -89,13 +89,13 @@
       "slug": "neuronal-dynamics",
       "title": "Neuronal Dynamics",
       "subtitle": "From single neurons to networks and models of cognition",
-      "authors": "Wulfram Gerstner, Werner M. Kistler, Richard Naud, and Liam Paninski",
-      "bookUrl": "https://neuronaldynamics.epfl.ch/online/",
-      "firstReading": {
-        "title": "Introduction",
-        "url": "https://neuronaldynamics.epfl.ch/online/Ch1.html",
-        "question": "How does a neuron turn a stream of inputs into a sequence of spikes?"
-      }
+      "chapters": [
+        {
+          "slug": "chapter-4",
+          "number": 4,
+          "title": "Dimensionality Reduction and Phase Plane Analysis"
+        }
+      ]
     }
   ],
   "contact": {

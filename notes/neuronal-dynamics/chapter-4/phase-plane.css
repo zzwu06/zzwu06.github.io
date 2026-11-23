@@ -1,0 +1,23 @@
+.chapter-number { margin: 0 0 8px; color: var(--muted); }
+.chapter-note section { padding-top: 30px; }
+.chapter-note p { max-width: 72ch; }
+.phase-demo { margin: 28px 0 24px; width: min(100%, 640px); }
+.phase-control { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; font-size: 16px; }
+.phase-control output { font-variant-numeric: tabular-nums; }
+.phase-control input { grid-column: 1 / -1; width: 100%; margin: 0; accent-color: var(--ink); }
+.phase-presets { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 16px; }
+.phase-presets button { background: #fff; color: var(--ink); border: 1px solid #777; padding: 5px 10px; font: inherit; font-size: 15px; cursor: pointer; }
+.phase-presets button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.phase-presets button:focus-visible, #phase-plot:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.phase-legend { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 15px; }
+.phase-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.phase-key { width: 23px; border-top: 2px solid var(--ink); }
+.voltage-key { border-color: #365f96; border-top-style: dashed; }
+.recovery-key { border-color: #805631; border-top-style: dotted; }
+#phase-plot { display: block; width: 100%; height: auto; cursor: crosshair; color: var(--ink); }
+#phase-plot text { font: 16px Arial, Helvetica, sans-serif; fill: currentColor; }
+.phase-demo figcaption { font-size: 16px; min-height: 3em; }
+.chapter-equations summary { color: var(--link); cursor: pointer; }
+.chapter-equations p:first-of-type { margin-top: 12px; }
+.chapter-equations math { margin: 12px 0; }
+.chapter-source { margin-top: 26px; font-size: 16px; }
