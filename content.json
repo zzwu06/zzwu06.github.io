@@ -1,0 +1,101 @@
+{
+  "name": "Zezhao Wu",
+  "nativeName": "吴泽钊",
+  "photo": "assets/zezhao-wu.jpg",
+  "about": [
+    "Hi! I'm Zezhao Wu, an undergraduate studying Biological Science at Tsinghua University, with graduation expected in June 2027. I am interested in how the brain represents the visual world and how the dynamics of these representations support perception and behavior."
+  ],
+  "links": {
+    "Email": "mailto:wuzz23@mails.tsinghua.edu.cn",
+    "Google Scholar": "https://scholar.google.com/citations?user=5XmKS-QAAAAJ",
+    "GitHub": ""
+  },
+  "news": [
+    {
+      "date": "2026",
+      "text": "Our preprint on learning continuous updating of neural population activity from sparse time samples is available on bioRxiv.",
+      "url": "https://doi.org/10.64898/2026.09.28.754781"
+    },
+    {
+      "date": "June–September 2026",
+      "text": "I worked with Ning Qian at Columbia University's Center for Theoretical Neuroscience as a summer research intern."
+    },
+    {
+      "date": "August 2026",
+      "text": "I attended the Cognitive Computational Neuroscience Conference. My unofficial role was full-time audience member, with no poster or talk of my own."
+    },
+    {
+      "date": "July 2026",
+      "text": "BrainPilot is available on arXiv.",
+      "url": "https://arxiv.org/abs/2607.15079"
+    },
+    {
+      "date": "July 2026",
+      "text": "Graph of Trace is available in the ACL System Demonstrations proceedings.",
+      "url": "https://aclanthology.org/2026.acl-demo.29/"
+    },
+    {
+      "date": "August 2025",
+      "text": "I joined a student-organized academic visit to the UK, visiting the University of Cambridge, the University of Oxford, and the John Innes Centre."
+    },
+    {
+      "date": "August 2023",
+      "text": "I began my undergraduate studies in Biological Science at Tsinghua University."
+    }
+  ],
+  "publications": [
+    {
+      "title": "Learning continuous updating and control of neural population activities from sparse time samples",
+      "authors": "Zezhao Wu, Mingsha Zhang, and Ning Qian",
+      "venue": "bioRxiv · Preprint · 2026",
+      "summary": "A continuity-equation constraint helps recurrent neural networks learn continuous population updating from supervision at sparse time points.",
+      "links": {
+        "Paper": "https://doi.org/10.64898/2026.09.28.754781"
+      },
+      "image": "assets/population-updating.png",
+      "imageAlt": "Recurrent neural network schematic, connection profiles, and population activity during transsaccadic updating."
+    },
+    {
+      "title": "BrainPilot: Automating Brain Discovery with Agentic Research",
+      "authors": "Haoxuan Li, Tianci Gao, Jianhe Li, Yang Fan, Runze Shi, Weiran Wang, Tianxiang Zhao, Zezhao Wu, Xiaoyang Jiang, Qihui Zhang, Jia Li, Xiao Xiao, Kai Du, Xiaoxuan Jia, Chao Xie, and Lu Mi",
+      "venue": "arXiv · Preprint · 2026",
+      "summary": "A multi-agent system for brain science research that combines domain knowledge with traceable workflows and expert involvement.",
+      "links": {
+        "Paper": "https://arxiv.org/abs/2607.15079"
+      },
+      "image": "assets/brainpilot.png",
+      "imageAlt": "Overview of BrainPilot, including domain knowledge, research areas, and human involvement."
+    },
+    {
+      "title": "Graph of Trace: Visualizing Execution Traces of Scientific Agents",
+      "authors": "Tianci Gao, Haoxuan Li, Jian He Li, Tianxiang Zhao, Shi Runze, Weiran Wang, Zezhao Wu, and Lu Mi",
+      "venue": "ACL 2026 · System Demonstrations · pp. 297–306",
+      "summary": "A visualization framework that organizes scientific agents’ execution traces into a graph, helping researchers inspect how results are produced and where failures arise.",
+      "links": {
+        "Paper": "https://aclanthology.org/2026.acl-demo.29/"
+      },
+      "image": "assets/graph-of-trace.png",
+      "imageAlt": "Graph of Trace framework linking scientific agents, monitoring, structured traces, and the interface."
+    }
+  ],
+  "notebooks": [
+    {
+      "title": "Where does orientation selectivity come from?",
+      "url": "https://zzwu06.github.io/notebooks/",
+      "sections": [
+        { "title": "Question", "anchor": "question" },
+        { "title": "What is selectivity?", "anchor": "selectivity" },
+        { "title": "Where does the input come from?", "anchor": "input-story" },
+        { "title": "From input to response", "anchor": "threshold-story" },
+        { "title": "Population dynamics", "anchor": "population-story" },
+        { "title": "Where activity settles", "anchor": "steady-state" },
+        { "title": "Mathematical details", "anchor": "mathematical-details" },
+        { "title": "References", "anchor": "references" }
+      ]
+    }
+  ],
+  "contact": {
+    "email": "wuzz23@mails.tsinghua.edu.cn",
+    "personalEmail": "wuzezhao848@gmail.com"
+  }
+}
