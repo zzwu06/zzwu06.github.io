@@ -81,17 +81,7 @@
   "notebooks": [
     {
       "title": "Where does orientation selectivity come from?",
-      "url": "https://zzwu06.github.io/notebooks/",
-      "sections": [
-        { "title": "Question", "anchor": "question" },
-        { "title": "What is selectivity?", "anchor": "selectivity" },
-        { "title": "Where does the input come from?", "anchor": "input-story" },
-        { "title": "From input to response", "anchor": "threshold-story" },
-        { "title": "Population dynamics", "anchor": "population-story" },
-        { "title": "Where activity settles", "anchor": "steady-state" },
-        { "title": "Mathematical details", "anchor": "mathematical-details" },
-        { "title": "References", "anchor": "references" }
-      ]
+      "url": "https://zzwu06.github.io/notebooks/"
     }
   ],
   "contact": {
